@@ -13,7 +13,7 @@ def task(request):
     slack_name = request.GET.get('slack_name', None)
     track = request.GET.get('track', None)
     github_repo_url = "https://github.com/DanAdewole/hngx-stage-one.git"
-    github_file_url = "https://github.com/DanAdewole/hngx-stage-one/blob/main/manage.py"
+    github_file_url = "https://github.com/DanAdewole/hngx-stage-one/blob/main/task/views.py"
     
     result = {
         "slack_name": slack_name,
