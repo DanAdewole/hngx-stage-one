@@ -9,7 +9,7 @@ from datetime import datetime, timezone
 def task(request):
     current_time = datetime.now()
     current_day = current_time.strftime('%A')
-    current_utc_time = datetime.now(timezone.utc)
+    current_utc_time = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
     slack_name = request.GET.get('slack_name', None)
     track = request.GET.get('track', None)
     github_repo_url = "https://github.com/DanAdewole/hngx-stage-one.git"
