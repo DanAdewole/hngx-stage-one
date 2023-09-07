@@ -2,15 +2,14 @@ from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
-import datetime
+from datetime import datetime, timezone
 
 
 @api_view(['GET'])
 def task(request):
-    current_time = datetime.datetime.now()
+    current_time = datetime.now()
     current_day = current_time.strftime('%A')
-    current_utc_time = datetime.datetime.utcnow()
-    
+    current_utc_time = datetime.now(timezone.utc)
     slack_name = request.GET.get('slack_name', None)
     track = request.GET.get('track', None)
     github_repo_url = "https://github.com/DanAdewole/hngx-stage-one.git"
